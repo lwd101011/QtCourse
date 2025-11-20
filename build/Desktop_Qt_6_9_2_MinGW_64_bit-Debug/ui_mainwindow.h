@@ -64,7 +64,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(791, 600);
+        MainWindow->resize(648, 452);
         actionNew = new QAction(MainWindow);
         actionNew->setObjectName("actionNew");
         QIcon icon;
@@ -196,7 +196,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 791, 21));
+        menubar->setGeometry(QRect(0, 0, 648, 21));
         menu = new QMenu(menubar);
         menu->setObjectName("menu");
         menu_E = new QMenu(menubar);
@@ -229,13 +229,21 @@ public:
         menu_E->addAction(actionCut);
         menu_E->addAction(actionCopy);
         menu_E->addAction(actionPaste);
-        menu_2->addAction(actionFont);
-        menu_2->addAction(actionShowLineNumber);
+        menu_E->addSeparator();
+        menu_E->addAction(actionFind);
+        menu_E->addAction(actionReplace);
+        menu_E->addSeparator();
+        menu_E->addAction(actionSelectAll);
         menu_2->addAction(actionLineWrap);
+        menu_2->addAction(actionShowLineNumber);
+        menu_2->addAction(actionFont);
+        menu_2->addAction(actionFontColor);
+        menu_2->addSeparator();
+        menu_2->addAction(action_3);
+        menu_2->addAction(action_2);
         menu_3->addAction(actionShowToolbar);
         menu_3->addAction(actionShowStatusBar);
-        menu_H->addAction(actionFind);
-        menu_H->addAction(actionReplace);
+        menu_H->addAction(actionAbout);
         toolBar->addAction(actionNew);
         toolBar->addAction(actionOpen);
         toolBar->addAction(actionSave);

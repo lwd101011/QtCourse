@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>791</width>
-    <height>600</height>
+    <width>648</width>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>791</width>
+     <width>648</width>
      <height>21</height>
     </rect>
    </property>
@@ -62,14 +62,23 @@
     <addaction name="actionCut"/>
     <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionReplace"/>
+    <addaction name="separator"/>
+    <addaction name="actionSelectAll"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
      <string>格式(&amp;O)</string>
     </property>
-    <addaction name="actionFont"/>
-    <addaction name="actionShowLineNumber"/>
     <addaction name="actionLineWrap"/>
+    <addaction name="actionShowLineNumber"/>
+    <addaction name="actionFont"/>
+    <addaction name="actionFontColor"/>
+    <addaction name="separator"/>
+    <addaction name="action_3"/>
+    <addaction name="action_2"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -82,8 +91,7 @@
     <property name="title">
      <string>帮助(&amp;H)</string>
     </property>
-    <addaction name="actionFind"/>
-    <addaction name="actionReplace"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_E"/>
