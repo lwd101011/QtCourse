@@ -15,11 +15,11 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <codeeditor.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -50,7 +50,7 @@ public:
     QAction *actionFontBackgroundColor;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
-    QPlainTextEdit *textEdit;
+    CodeEditor *textEdit;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_E;
@@ -188,7 +188,7 @@ public:
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(1, 1, 1, 1);
-        textEdit = new QPlainTextEdit(centralwidget);
+        textEdit = new CodeEditor(centralwidget);
         textEdit->setObjectName("textEdit");
 
         verticalLayout->addWidget(textEdit);
