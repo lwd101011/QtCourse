@@ -48,7 +48,16 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_actionOpen_triggered",
         "on_actionSave_triggered",
         "on_actionSaveAs_triggered",
-        "on_textEdit_textChanged"
+        "on_textEdit_textChanged",
+        "on_actionUndo_triggered",
+        "on_actionCut_triggered",
+        "on_actionCopy_triggered",
+        "on_actionPaste_triggered",
+        "on_actionRedo_triggered",
+        "on_textEdit_copyAvailable",
+        "b",
+        "on_textEdit_redoAvailable",
+        "on_textEdit_undoAvailable"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -68,6 +77,28 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_textEdit_textChanged'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionUndo_triggered'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionCut_triggered'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionCopy_triggered'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionPaste_triggered'
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionRedo_triggered'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_textEdit_copyAvailable'
+        QtMocHelpers::SlotData<void(bool)>(15, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 16 },
+        }}),
+        // Slot 'on_textEdit_redoAvailable'
+        QtMocHelpers::SlotData<void(bool)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 16 },
+        }}),
+        // Slot 'on_textEdit_undoAvailable'
+        QtMocHelpers::SlotData<void(bool)>(18, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 16 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -99,10 +130,17 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->on_actionSave_triggered(); break;
         case 6: _t->on_actionSaveAs_triggered(); break;
         case 7: _t->on_textEdit_textChanged(); break;
+        case 8: _t->on_actionUndo_triggered(); break;
+        case 9: _t->on_actionCut_triggered(); break;
+        case 10: _t->on_actionCopy_triggered(); break;
+        case 11: _t->on_actionPaste_triggered(); break;
+        case 12: _t->on_actionRedo_triggered(); break;
+        case 13: _t->on_textEdit_copyAvailable((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 14: _t->on_textEdit_redoAvailable((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 15: _t->on_textEdit_undoAvailable((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -124,14 +162,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 16;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 16;
     }
     return _id;
 }
