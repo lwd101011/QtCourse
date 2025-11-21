@@ -36,7 +36,7 @@ public:
     QCheckBox *cbCaseSensetive;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout_2;
-    QRadioButton *rbUP;
+    QRadioButton *rbUp;
     QRadioButton *rbDown;
     QVBoxLayout *verticalLayout;
     QPushButton *btFindNext;
@@ -78,10 +78,10 @@ public:
         groupBox->setObjectName("groupBox");
         horizontalLayout_2 = new QHBoxLayout(groupBox);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        rbUP = new QRadioButton(groupBox);
-        rbUP->setObjectName("rbUP");
+        rbUp = new QRadioButton(groupBox);
+        rbUp->setObjectName("rbUp");
 
-        horizontalLayout_2->addWidget(rbUP);
+        horizontalLayout_2->addWidget(rbUp);
 
         rbDown = new QRadioButton(groupBox);
         rbDown->setObjectName("rbDown");
@@ -128,7 +128,7 @@ public:
         label->setText(QCoreApplication::translate("SearchDialog", "\346\237\245\346\211\276\347\233\256\346\240\207\357\274\232", nullptr));
         cbCaseSensetive->setText(QCoreApplication::translate("SearchDialog", "\345\214\272\345\210\206\345\244\247\345\260\217\345\206\231", nullptr));
         groupBox->setTitle(QCoreApplication::translate("SearchDialog", "\346\226\271\345\220\221", nullptr));
-        rbUP->setText(QCoreApplication::translate("SearchDialog", "\345\220\221\344\270\212(&U)", nullptr));
+        rbUp->setText(QCoreApplication::translate("SearchDialog", "\345\220\221\344\270\212(&U)", nullptr));
         rbDown->setText(QCoreApplication::translate("SearchDialog", "\345\220\221\344\270\213(&D)", nullptr));
         btFindNext->setText(QCoreApplication::translate("SearchDialog", "\346\237\245\346\211\276\344\270\213\344\270\200\344\270\252(&F)", nullptr));
         btCancel->setText(QCoreApplication::translate("SearchDialog", "\345\217\226\346\266\210", nullptr));

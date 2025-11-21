@@ -21,6 +21,9 @@ void SearchDialog::on_btFindNext_clicked()
 {
     QString target = ui->searchText->text();
 
+    if(target == "" || pTextEdit == nullptr)
+        return;
+
     QString text = pTextEdit->toPlainText();
     QTextCursor c=pTextEdit->textCursor();
     int index= -1;
@@ -33,7 +36,7 @@ void SearchDialog::on_btFindNext_clicked()
             c.setPosition(index + target.length(), QTextCursor::KeepAnchor);
             pTextEdit->setTextCursor(c);
         }
-    } else if (ui->rbUP->isChecked()) {
+    } else if (ui->rbUp->isChecked()) {
         index = text.lastIndexOf(target, c.position() - text.length() - 1,
                                  ui->cbCaseSensetive->isChecked() ? Qt::CaseSensitive : Qt::CaseInsensitive);
         if (index >= 0) {

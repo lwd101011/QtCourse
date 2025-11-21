@@ -46,7 +46,7 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QRadioButton" name="rbUP">
+           <widget class="QRadioButton" name="rbUp">
             <property name="text">
              <string>向上(&amp;U)</string>
             </property>
