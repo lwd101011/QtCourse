@@ -46,8 +46,8 @@ public:
     QAction *actionAbout;
     QAction *actionShowLineNumber;
     QAction *actionFontColor;
-    QAction *action_2;
-    QAction *action_3;
+    QAction *actionBackgroundColor;
+    QAction *actionFontBackgroundColor;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QPlainTextEdit *textEdit;
@@ -176,12 +176,12 @@ public:
         actionFontColor = new QAction(MainWindow);
         actionFontColor->setObjectName("actionFontColor");
         actionFontColor->setMenuRole(QAction::MenuRole::NoRole);
-        action_2 = new QAction(MainWindow);
-        action_2->setObjectName("action_2");
-        action_2->setMenuRole(QAction::MenuRole::NoRole);
-        action_3 = new QAction(MainWindow);
-        action_3->setObjectName("action_3");
-        action_3->setMenuRole(QAction::MenuRole::NoRole);
+        actionBackgroundColor = new QAction(MainWindow);
+        actionBackgroundColor->setObjectName("actionBackgroundColor");
+        actionBackgroundColor->setMenuRole(QAction::MenuRole::NoRole);
+        actionFontBackgroundColor = new QAction(MainWindow);
+        actionFontBackgroundColor->setObjectName("actionFontBackgroundColor");
+        actionFontBackgroundColor->setMenuRole(QAction::MenuRole::NoRole);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -241,8 +241,8 @@ public:
         menu_2->addAction(actionFont);
         menu_2->addAction(actionFontColor);
         menu_2->addSeparator();
-        menu_2->addAction(action_3);
-        menu_2->addAction(action_2);
+        menu_2->addAction(actionFontBackgroundColor);
+        menu_2->addAction(actionBackgroundColor);
         menu_3->addAction(actionShowToolbar);
         menu_3->addAction(actionShowStatusBar);
         menu_H->addAction(actionAbout);
@@ -391,13 +391,13 @@ public:
 #if QT_CONFIG(tooltip)
         actionFontColor->setToolTip(QCoreApplication::translate("MainWindow", "\345\255\227\344\275\223\351\242\234\350\211\262", nullptr));
 #endif // QT_CONFIG(tooltip)
-        action_2->setText(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221\345\231\250\350\203\214\346\231\257\350\211\262", nullptr));
+        actionBackgroundColor->setText(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221\345\231\250\350\203\214\346\231\257\350\211\262", nullptr));
 #if QT_CONFIG(tooltip)
-        action_2->setToolTip(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221\345\231\250\350\203\214\346\231\257\350\211\262", nullptr));
+        actionBackgroundColor->setToolTip(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221\345\231\250\350\203\214\346\231\257\350\211\262", nullptr));
 #endif // QT_CONFIG(tooltip)
-        action_3->setText(QCoreApplication::translate("MainWindow", "\345\255\227\344\275\223\350\203\214\346\231\257\350\211\262", nullptr));
+        actionFontBackgroundColor->setText(QCoreApplication::translate("MainWindow", "\345\255\227\344\275\223\350\203\214\346\231\257\350\211\262", nullptr));
 #if QT_CONFIG(tooltip)
-        action_3->setToolTip(QCoreApplication::translate("MainWindow", "\345\255\227\344\275\223\350\203\214\346\231\257\350\211\262", nullptr));
+        actionFontBackgroundColor->setToolTip(QCoreApplication::translate("MainWindow", "\345\255\227\344\275\223\350\203\214\346\231\257\350\211\262", nullptr));
 #endif // QT_CONFIG(tooltip)
         menu->setTitle(QCoreApplication::translate("MainWindow", "\346\226\207\344\273\266(&F)", nullptr));
         menu_E->setTitle(QCoreApplication::translate("MainWindow", "\347\274\226\350\276\221(&E)", nullptr));

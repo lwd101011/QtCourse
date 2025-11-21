@@ -57,7 +57,12 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_textEdit_copyAvailable",
         "b",
         "on_textEdit_redoAvailable",
-        "on_textEdit_undoAvailable"
+        "on_textEdit_undoAvailable",
+        "on_actionFontColor_triggered",
+        "on_actionBackgroundColor_triggered",
+        "on_actionFontBackgroundColor_triggered",
+        "on_actionLineWrap_triggered",
+        "on_actionFont_triggered"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -99,6 +104,16 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(bool)>(18, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
+        // Slot 'on_actionFontColor_triggered'
+        QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionBackgroundColor_triggered'
+        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionFontBackgroundColor_triggered'
+        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionLineWrap_triggered'
+        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionFont_triggered'
+        QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -138,6 +153,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 13: _t->on_textEdit_copyAvailable((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 14: _t->on_textEdit_redoAvailable((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 15: _t->on_textEdit_undoAvailable((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 16: _t->on_actionFontColor_triggered(); break;
+        case 17: _t->on_actionBackgroundColor_triggered(); break;
+        case 18: _t->on_actionFontBackgroundColor_triggered(); break;
+        case 19: _t->on_actionLineWrap_triggered(); break;
+        case 20: _t->on_actionFont_triggered(); break;
         default: ;
         }
     }
@@ -162,14 +182,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 21;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 21)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 16;
+        _id -= 21;
     }
     return _id;
 }
