@@ -62,7 +62,11 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_actionBackgroundColor_triggered",
         "on_actionFontBackgroundColor_triggered",
         "on_actionLineWrap_triggered",
-        "on_actionFont_triggered"
+        "on_actionFont_triggered",
+        "on_actionShowToolbar_triggered",
+        "on_actionShowStatusBar_triggered",
+        "on_actionSelectAll_triggered",
+        "on_actionExit_triggered"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -114,6 +118,14 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_actionFont_triggered'
         QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionShowToolbar_triggered'
+        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionShowStatusBar_triggered'
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionSelectAll_triggered'
+        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionExit_triggered'
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -158,6 +170,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 18: _t->on_actionFontBackgroundColor_triggered(); break;
         case 19: _t->on_actionLineWrap_triggered(); break;
         case 20: _t->on_actionFont_triggered(); break;
+        case 21: _t->on_actionShowToolbar_triggered(); break;
+        case 22: _t->on_actionShowStatusBar_triggered(); break;
+        case 23: _t->on_actionSelectAll_triggered(); break;
+        case 24: _t->on_actionExit_triggered(); break;
         default: ;
         }
     }
@@ -182,14 +198,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 25;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 21)
+        if (_id < 25)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 21;
+        _id -= 25;
     }
     return _id;
 }
