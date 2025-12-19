@@ -66,6 +66,8 @@ void IDatabase::revertPatientEdit()
     return patientTabModel->revertAll();
 }
 
+
+
 QString IDatabase::userLogin(QString userName, QString password)
 {
     //    return "loginOK";
@@ -77,12 +79,12 @@ QString IDatabase::userLogin(QString userName, QString password)
         QString passwd = query.value("password").toString();
         if(passwd == password)
         {
-            qDebug() <<"wrong password";
+            qDebug() <<"login ok";
             return "loginOK";
         }
         else
         {
-            qDebug() <<"worngpassword";
+            qDebug() <<"wrong password";
             return "wrongPassword";
         }
     }
