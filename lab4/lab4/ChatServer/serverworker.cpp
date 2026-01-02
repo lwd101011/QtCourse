@@ -7,6 +7,8 @@ ServerWorker::ServerWorker(QObject *parent): QObject{parent}
 {
     m_serverSocket = new QTcpSocket(this);
     connect(m_serverSocket,&QTcpSocket::readyRead,this,&ServerWorker::onReadyRead);
+    connect(m_serverSocket,&QTcpSocket::disconnected,this,&ServerWorker::disconnectedFromClient);
+
 }
 
 bool ServerWorker::setSocketDescriptor(qintptr socketDescriptor)
@@ -17,6 +19,7 @@ bool ServerWorker::setSocketDescriptor(qintptr socketDescriptor)
 QString ServerWorker::userName()
 {
     return m_userName;
+
 }
 
 void ServerWorker::setUserName(QString user)
@@ -34,8 +37,8 @@ void ServerWorker::onReadyRead()
         socketStream.startTransaction();
         socketStream >> jsonData;
         if(socketStream.commitTransaction()){
-        //   emit logMessage(QString::fromUtf8(jsonData));
-        //   sendMessage("I recieved message");
+            //            emit logMessage(QString::fromUtf8(jsonData));
+            //            sendMessage("I recieved message");
 
             QJsonParseError parseError;
             const QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData,&parseError);

@@ -3,7 +3,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 
-ChatClient::ChatClient(QObject *parent) : QObject{parent}
+ChatClient::ChatClient(QObject *parent): QObject{parent}
 {
     m_clientSocket = new QTcpSocket(this);
 
@@ -19,18 +19,19 @@ void ChatClient::onReadyRead()
     // start an infinite loop
     for(;;){
         socketStream.startTransaction();
-        socketStream >> jsonData;
+        socketStream>>jsonData;
         if(socketStream.commitTransaction()){
-//            emit messageReceived(QString::fromUtf8(jsonData));
+            //            emit messageReceived(QString::fromUtf8(jsonData));
             QJsonParseError parseError;
             const QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData,&parseError);
             if(parseError.error == QJsonParseError::NoError){
 
                 if(jsonDoc.isObject()){
-//                    emit logMessage(QJsonDocument(jsonDoc).toJson(QJsonDocument::Compact));
+                    //                    emit logMessage(QJsonDocument(jsonDoc).toJson(QJsonDocument::Compact));
                     emit jsonReceived(jsonDoc.object());// Parse the JSON
                 }
             }
+
         }
         else{
 
@@ -62,6 +63,7 @@ void ChatClient::sendMessage(const QString &text, const QString &type)
 void ChatClient::connectToSever(const QHostAddress &address, quint16 port)
 {
     m_clientSocket->connectToHost(address,port);
+
 }
 
 void ChatClient::disconnectFromHost()
