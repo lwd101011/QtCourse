@@ -21,15 +21,27 @@ void WelcomeView::on_btDepartment_clicked()
     emit goDepartmentView();
 }
 
-
 void WelcomeView::on_btDoctor_clicked()
 {
     emit goDoctorView();
 }
-
 
 void WelcomeView::on_btPatient_clicked()
 {
     emit goPatientView();
 }
 
+void WelcomeView::on_btMedicalRecord_clicked()
+{
+    emit goMedicalRecordView();
+}
+
+void WelcomeView::on_btMedicine_clicked()
+{
+    emit goMedicineView();
+}
+
+void WelcomeView::on_btAppointment_clicked()
+{
+    emit goAppointmentView();
+}
