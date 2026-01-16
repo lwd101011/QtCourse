@@ -21,6 +21,14 @@ public:
     // 获取数据库实例的公共方法
     QSqlDatabase getDatabase() const { return database; }
 
+    // 多线程统计查询方法（由后台线程调用）
+    int getPatientCount();
+    int getDoctorCount();
+    int getAppointmentCount();
+    int getMedicineCount();
+    int getTodayAppointments();
+    int getMedicalRecordCount();
+
 private:
     explicit IDatabase(QObject *parent = nullptr);
     IDatabase(IDatabase const &) = delete;

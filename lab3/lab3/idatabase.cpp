@@ -122,6 +122,70 @@ void IDatabase::ininDatabase()
     }
 }
 
+// 多线程统计查询实现
+int IDatabase::getPatientCount()
+{
+    QSqlQuery query(database);
+    query.exec("SELECT COUNT(*) FROM Patient");
+    if (query.next()) {
+        return query.value(0).toInt();
+    }
+    return 0;
+}
+
+int IDatabase::getDoctorCount()
+{
+    QSqlQuery query(database);
+    query.exec("SELECT COUNT(*) FROM doctor");
+    if (query.next()) {
+        return query.value(0).toInt();
+    }
+    return 0;
+}
+
+int IDatabase::getAppointmentCount()
+{
+    QSqlQuery query(database);
+    query.exec("SELECT COUNT(*) FROM appointment");
+    if (query.next()) {
+        return query.value(0).toInt();
+    }
+    return 0;
+}
+
+int IDatabase::getMedicineCount()
+{
+    QSqlQuery query(database);
+    query.exec("SELECT COUNT(*) FROM medicine");
+    if (query.next()) {
+        return query.value(0).toInt();
+    }
+    return 0;
+}
+
+int IDatabase::getTodayAppointments()
+{
+    QString today = QDate::currentDate().toString("yyyy-MM-dd");
+    QSqlQuery query(database);
+    query.prepare(QString("SELECT COUNT(*) FROM appointment WHERE appointment_date = :today"));
+    query.bindValue(":today", today);
+    query.exec();
+    if (query.next()) {
+        return query.value(0).toInt();
+    }
+    return 0;
+}
+
+int IDatabase::getMedicalRecordCount()
+{
+    QSqlQuery query(database);
+    query.exec("SELECT COUNT(*) FROM medical_record");
+    if (query.next()) {
+        return query.value(0).toInt();
+    }
+    return 0;
+}
+
 bool IDatabase::initPatientModel()
 {
     patientTabModel = new QSqlTableModel(this,database);

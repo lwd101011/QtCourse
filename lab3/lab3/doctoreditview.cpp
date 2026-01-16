@@ -84,4 +84,3 @@ void DoctorEditView::on_btCancel_clicked()
     IDatabase::getInstance().revertDoctorEdit();
     emit goPreviousView();
 }
-//医生编辑
