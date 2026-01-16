@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>科室编辑</string>
+   <string>科室信息编辑</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

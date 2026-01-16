@@ -18,6 +18,9 @@ public:
 
     QString userLogin(QString userName,QString password);
 
+    // 获取数据库实例的公共方法
+    QSqlDatabase getDatabase() const { return database; }
+
 private:
     explicit IDatabase(QObject *parent = nullptr);
     IDatabase(IDatabase const &) = delete;
