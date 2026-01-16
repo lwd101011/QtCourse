@@ -1,6 +1,7 @@
 #include "statisticsthread.h"
 #include <QSqlError>
 
+
 StatisticsThread::StatisticsThread(QObject *parent)
     : QThread(parent)
     , isRunning(false)
