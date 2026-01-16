@@ -9,7 +9,6 @@
 #include <QSqlQuery>
 #include "idatabase.h"
 
-
 class StatisticsThread : public QThread
 {
     Q_OBJECT
