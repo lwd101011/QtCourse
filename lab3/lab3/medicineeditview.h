@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDataWidgetMapper>
 
+
 namespace Ui {
 class MedicineEditView;
 }

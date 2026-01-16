@@ -5,6 +5,7 @@
 #include <QSqlRecord>
 #include <QDate>
 
+
 MedicineEditView::MedicineEditView(QWidget *parent, int index)
     : QWidget(parent)
     , ui(new Ui::MedicineEditView)
