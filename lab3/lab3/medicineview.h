@@ -1,15 +1,34 @@
 #ifndef MEDICINEVIEW_H
 #define MEDICINEVIEW_H
 
-#include <QObject>
+#include <QWidget>
 
-class medicineview : public QObject
+namespace Ui {
+class MedicineView;
+}
+
+class MedicineView : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit medicineview(QObject *parent = nullptr);
+    explicit MedicineView(QWidget *parent = nullptr);
+    ~MedicineView();
+
+private slots:
+    void on_btAdd_clicked();
+    void on_btSearch_clicked();
+    void on_btDelete_clicked();
+    void on_btEdit_clicked();
+    void on_btSubmit_clicked();
+    void on_btRevert_clicked();
+    void on_btLowStock_clicked();
 
 signals:
+    void goMedicineEditView(int idx);
+
+private:
+    Ui::MedicineView *ui;
 };
 
 #endif // MEDICINEVIEW_H
