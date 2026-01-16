@@ -1,15 +1,31 @@
 #ifndef DOCTOREDITVIEW_H
 #define DOCTOREDITVIEW_H
 
-#include <QObject>
+#include <QWidget>
+#include <QDataWidgetMapper>
 
-class doctoreditview : public QObject
+namespace Ui {
+class DoctorEditView;
+}
+
+class DoctorEditView : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit doctoreditview(QObject *parent = nullptr);
+    explicit DoctorEditView(QWidget *parent = nullptr, int index = -1);
+    ~DoctorEditView();
+
+private slots:
+    void on_btSave_clicked();
+    void on_btCancel_clicked();
 
 signals:
+    void goPreviousView();
+
+private:
+    Ui::DoctorEditView *ui;
+    QDataWidgetMapper *dataMapper;
 };
 
 #endif // DOCTOREDITVIEW_H

@@ -3,6 +3,7 @@
 #include <QDebug>
 #include "idatabase.h"
 #include "departmenteditview.h"
+#include "doctoreditview.h"
 
 MasterView::MasterView(QWidget *parent)
     : QWidget(parent)
@@ -47,6 +48,17 @@ void MasterView::goDoctorView()
     qDebug()<<"goDoctorView";
     doctorView = new DoctorView(this);
     pushWidgetToStackView(doctorView);
+
+    connect(doctorView, SIGNAL(goDoctorEditView(int)),this,SLOT(goDoctorEditView(int)));
+}
+
+void MasterView::goDoctorEditView(int rowNo)
+{
+    qDebug()<<"goDoctorEditView";
+    doctorEditView = new DoctorEditView(this, rowNo);
+    pushWidgetToStackView(doctorEditView);
+
+    connect(doctorEditView, SIGNAL(goPreviousView()),this, SLOT(goPreviousView()));
 }
 
 void MasterView::goDepartmentView()
@@ -136,4 +148,3 @@ void MasterView::on_btLogout_clicked()
 {
     goPreviousView();
 }
-
