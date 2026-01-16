@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QDateTime>
 
+
 AppointmentEditView::AppointmentEditView(QWidget *parent, int index)
     : QWidget(parent)
     , ui(new Ui::AppointmentEditView)
