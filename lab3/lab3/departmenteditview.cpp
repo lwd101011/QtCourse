@@ -47,3 +47,4 @@ void DepartmentEditView::on_btCancel_clicked()
     IDatabase::getInstance().revertDepartmentEdit();
     emit goPreviousView();
 }
+//科室编辑
