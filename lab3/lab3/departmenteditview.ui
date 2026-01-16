@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>DepartmentEditView</class>
+ <widget class="QWidget" name="DepartmentEditView">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>451</width>
-    <height>235</height>
+    <width>339</width>
+    <height>191</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>科室编辑</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
          <string>科室名称：</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="1">
        <widget class="QLineEdit" name="txtName"/>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>科室位置：</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="2" column="1">
        <widget class="QLineEdit" name="txtLocation"/>
       </item>
-      <item row="2" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
          <string>联系电话：</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="3" column="1">
        <widget class="QLineEdit" name="txtPhone"/>
       </item>
-      <item row="3" column="0">
+      <item row="0" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>科室描述：</string>
+         <string>科室ID：</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QTextEdit" name="txtDescription"/>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="txtID"/>
       </item>
      </layout>
     </widget>
