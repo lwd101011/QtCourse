@@ -6,6 +6,7 @@
 #include "doctoreditview.h"
 #include "medicalrecordeditview.h"
 #include "medicineeditview.h"
+#include "appointmenteditview.h"
 
 MasterView::MasterView(QWidget *parent)
     : QWidget(parent)
@@ -45,6 +46,7 @@ void MasterView::goWelcomeView()
     connect(welcomeView, SIGNAL(goDepartmentView()),this, SLOT(goDepartmentView()));
     connect(welcomeView, SIGNAL(goMedicalRecordView()),this, SLOT(goMedicalRecordView()));
     connect(welcomeView, SIGNAL(goMedicineView()),this, SLOT(goMedicineView()));
+    connect(welcomeView, SIGNAL(goAppointmentView()),this, SLOT(goAppointmentView()));
 }
 
 void MasterView::goDoctorView()
@@ -135,6 +137,24 @@ void MasterView::goMedicineEditView(int rowNo)
     pushWidgetToStackView(medicineEditView);
 
     connect(medicineEditView, SIGNAL(goPreviousView()),this, SLOT(goPreviousView()));
+}
+
+void MasterView::goAppointmentView()
+{
+    qDebug()<<"goAppointmentView";
+    appointmentView = new AppointmentView(this);
+    pushWidgetToStackView(appointmentView);
+
+    connect(appointmentView, SIGNAL(goAppointmentEditView(int)),this,SLOT(goAppointmentEditView(int)));
+}
+
+void MasterView::goAppointmentEditView(int rowNo)
+{
+    qDebug()<<"goAppointmentEditView";
+    appointmentEditView = new AppointmentEditView(this, rowNo);
+    pushWidgetToStackView(appointmentEditView);
+
+    connect(appointmentEditView, SIGNAL(goPreviousView()),this, SLOT(goPreviousView()));
 }
 
 void MasterView::goPreviousView()

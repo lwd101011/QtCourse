@@ -146,22 +146,28 @@ void AppointmentEditView::on_btSave_clicked()
     if (currentIndex >= 0) {
         QSqlTableModel *tabModel = IDatabase::getInstance().appointmentTabModel;
 
-        // 获取并设置患者ID
+        // 获取并设置患者ID和患者姓名
         if (ui->cmbPatient->currentIndex() >= 0) {
             QString patientId = ui->cmbPatient->currentData().toString();
+            QString patientName = ui->cmbPatient->currentText();
             tabModel->setData(tabModel->index(currentIndex, tabModel->fieldIndex("PATIENT_ID")), patientId);
+            tabModel->setData(tabModel->index(currentIndex, tabModel->fieldIndex("PATIENT_NAME")), patientName);
         }
 
-        // 获取并设置科室ID
+        // 获取并设置科室ID和科室名称
         if (ui->cmbDepartment->currentIndex() >= 0) {
             QString deptId = ui->cmbDepartment->currentData().toString();
+            QString deptName = ui->cmbDepartment->currentText();
             tabModel->setData(tabModel->index(currentIndex, tabModel->fieldIndex("DEPARTMENT_ID")), deptId);
+            tabModel->setData(tabModel->index(currentIndex, tabModel->fieldIndex("DEPARTMENT_NAME")), deptName);
         }
 
-        // 获取并设置医生ID
+        // 获取并设置医生ID和医生姓名
         if (ui->cmbDoctor->currentIndex() >= 0) {
             QString doctorId = ui->cmbDoctor->currentData().toString();
+            QString doctorName = ui->cmbDoctor->currentText();
             tabModel->setData(tabModel->index(currentIndex, tabModel->fieldIndex("DOCTOR_ID")), doctorId);
+            tabModel->setData(tabModel->index(currentIndex, tabModel->fieldIndex("DOCTOR_NAME")), doctorName);
         }
 
         // 设置日期和时间

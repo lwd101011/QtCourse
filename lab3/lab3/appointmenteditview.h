@@ -20,7 +20,6 @@ private slots:
     void on_btSave_clicked();
     void on_btCancel_clicked();
     void on_cmbDepartment_currentIndexChanged(int index);
-    void on_cmbPatient_currentIndexChanged(int index);
 
 signals:
     void goPreviousView();

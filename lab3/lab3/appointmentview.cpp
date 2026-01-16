@@ -19,6 +19,15 @@ AppointmentView::AppointmentView(QWidget *parent)
     if (iDatabase.initAppointmentModel()) {
         ui->tableView->setModel(iDatabase.appointmentTabModel);
         ui->tableView->setSelectionModel(iDatabase.theAppointmentSelection);
+
+        // 隐藏ID列，只显示名称列
+        QSqlTableModel *tabModel = iDatabase.appointmentTabModel;
+
+        // 隐藏ID列
+        ui->tableView->setColumnHidden(tabModel->fieldIndex("PATIENT_ID"), true);
+        ui->tableView->setColumnHidden(tabModel->fieldIndex("DOCTOR_ID"), true);
+        ui->tableView->setColumnHidden(tabModel->fieldIndex("DEPARTMENT_ID"), true);
+
         // 设置列宽自适应
         ui->tableView->horizontalHeader()->setStretchLastSection(true);
     }
