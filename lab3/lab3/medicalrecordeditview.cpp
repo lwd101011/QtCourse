@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 
+
 MedicalRecordEditView::MedicalRecordEditView(QWidget *parent, int rowNo)
     : QWidget(parent)
     , ui(new Ui::MedicalRecordEditView)
